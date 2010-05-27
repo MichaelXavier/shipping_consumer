@@ -271,7 +271,7 @@ class USPSRateRequest < Consumer::Request
   end
   
   def international?
-    @country && @country != "US"
+    @country && !%w[US PR].include?(@country)
   end
   
 end
